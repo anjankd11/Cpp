@@ -12,3 +12,5 @@ public:
 	void print();                   //function that prints all information about the rectangle: its sides, area and perimeter values
 
 };
+
+
