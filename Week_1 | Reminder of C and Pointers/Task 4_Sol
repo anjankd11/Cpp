@@ -1,0 +1,51 @@
+/*Task 4. Develop and implement a function that receives some string value as a parameter and
+reverses it. In the implementation you cannot use any special functions from external string
+libraries.*/
+
+#include<stdio.h>
+#include<stdlib.h>
+#define size 1000
+
+
+int string_length(char* string) //using this function to measure the string length
+{
+	int length=0;
+	
+
+	for (int i = 0; *(i+string) != '\0'; i = i + 1) {
+
+		length = length + 1;//increasing length by 1 untl it reaches end of the string "\0"
+
+	}
+	return length;
+
+}
+
+void reverse(char* string)//function to reverse a string 
+{
+	int length = string_length(string);
+
+	for (int i = 0; i < length/2 ; i = i + 1) {//this for loop will traverse the array until the middle of the array and will swap two characters 
+
+		char temp = string[i];//keeping the first character in a temporary varaible 
+
+		string[i] = string[length - 1 - i];//putting the last character in place of first character
+
+		string[length - 1 - i] = temp;//putting the first character which was in temporary variable in the place of last character
+	}
+
+  
+}
+
+int main() {
+
+	char d[size];
+
+	printf("Enter what you want to write and watch it being reversed!\n ");
+
+	gets_s(d);//input of the string
+	reverse(d);//reversing the string
+	printf("%s", d);
+	
+	return 0;
+}
